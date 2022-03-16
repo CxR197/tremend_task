@@ -1,2 +1,2 @@
 #!/bin/bash
-2echo "Hello ${NAME}
+echo "Hello ${NAME}"
