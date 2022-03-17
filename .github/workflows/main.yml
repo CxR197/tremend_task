@@ -36,5 +36,5 @@ jobs:
       - name: Run
         id: run_image
         run: |
-          docker build ./${{ secrets.DOCKER_HUB_USERNAME }}/hello_script:latest
+          docker build ./hello_script ${{ secrets.DOCKER_HUB_USERNAME }}/hello_script:latest
         
