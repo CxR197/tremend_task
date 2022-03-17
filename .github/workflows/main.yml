@@ -13,8 +13,8 @@ jobs:
 
       - name: Checkout GitRepo 
         uses: actions/checkout@v2
-				run: | 
-					docker build ./hello_script ${{ secrets.DOCKER_HUB_USERNAME }}/hello_script:latest
+	      run: | 
+	        docker build ./hello_script ${{ secrets.DOCKER_HUB_USERNAME }}/hello_script:latest
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
