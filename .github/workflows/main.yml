@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_run:
     runs-on: ubuntu-latest
     steps:
 
@@ -31,7 +31,10 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mybashscript:latest
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/hello_script:latest
+        
+      - name: Run
+        id: run_image
+        run: |
+          docker build ./${{ secrets.DOCKER_HUB_USERNAME }}/hello_script:latest
+        
