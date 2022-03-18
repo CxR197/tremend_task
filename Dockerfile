@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk update
+RUN apk update && apk add bash
 
 COPY script.sh /script.sh
  
