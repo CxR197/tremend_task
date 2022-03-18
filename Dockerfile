@@ -1,11 +1,11 @@
-FROM ubuntu:20.04
+FROM alpine:latest
 
-RUN sudo apt-get update -y
+RUN apk update
 RUN mkdir myscript
 
 COPY script.sh myscript/script.sh
 
 WORKDIR myscript
-RUN chmod +x /script.sh
+RUN chmod +777 myscript/script.sh
  
 ENTRYPOINT ["script.sh"]
