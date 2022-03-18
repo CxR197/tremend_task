@@ -1,6 +1,5 @@
 FROM ubuntu:20.04
 
-RUN sudo apt-get install -y bash
 RUN sudo apt-get update -y
 RUN mkdir myscript
 
