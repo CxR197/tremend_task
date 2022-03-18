@@ -1,6 +1,12 @@
 FROM ubuntu:20.04
 
-COPY script.sh /
+RUN sudo apt-get install -y bash
+RUN sudo apt-get update -y
+RUN mkdir myscript
+
+COPY script.sh myscript/script.sh
+
+WORKDIR myscript
 RUN chmod +x /script.sh
  
-CMD ["DONE :)"]
+ENTRYPOINT ["script.sh"]
